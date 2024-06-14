@@ -1,23 +1,25 @@
 {
     "name": "GameFrameX.Advertisement.WechatMiniGame.Runtime",
+    "rootNamespace": "GameFrameX.Advertisement.WechatMiniGame.Runtime",
     "references": [
         "GameFrameX.Runtime",
         "GameFrameX.Event.Runtime",
         "GameFrameX.Advertisement.Runtime",
         "Wx"
     ],
-    "rootNamespace": "GameFrameX.Advertisement.WechatMiniGame.Runtime",
     "includePlatforms": [],
     "excludePlatforms": [],
-    "allowUnsafeCode": true,
+    "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": [        {
-      "name": "com.qq.weixin.minigame",
-      "expression": "",
-      "define": "ENABLE_WECHAT_MINI_GAME_ADVERTISEMENT"
-    }],
+    "versionDefines": [
+        {
+            "name": "com.qq.weixin.minigame",
+            "expression": "",
+            "define": "ENABLE_WECHAT_MINI_GAME_ADVERTISEMENT"
+        }
+    ],
     "noEngineReferences": false
 }
