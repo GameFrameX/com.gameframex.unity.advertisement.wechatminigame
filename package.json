@@ -1,16 +1,16 @@
 {
-  "name": "com.alianblank.gameframex.unity.advertisement.wechatminigame",
+  "name": "com.gameframex.unity.advertisement.wechatminigame",
   "displayName": "Game Frame X Advertisement (WeChat Mini Game)",
   "category": "Game Framework X",
   "description": "Game Frame X Advertisement WeChat Mini Game Component",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "unity": "2017.1",
   "keywords": [
     "Game Framework X"
   ],
   "repository": {
-    "name": "com.alianblank.gameframex.unity.advertisement.wechatminigame",
-    "url": "https://github.com/AlianBlank/com.alianblank.gameframex.unity.advertisement.wechatminigame.git",
+    "name": "com.gameframex.unity.advertisement.wechatminigame",
+    "url": "https://github.com/AlianBlank/com.gameframex.unity.advertisement.wechatminigame.git",
     "type": "git"
   },
   "author": {
