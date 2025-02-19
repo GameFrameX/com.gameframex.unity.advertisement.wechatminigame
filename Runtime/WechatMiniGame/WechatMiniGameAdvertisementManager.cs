@@ -1,6 +1,7 @@
 #if UNITY_WEBGL && ENABLE_WECHAT_MINI_GAME && ENABLE_WECHAT_MINI_GAME_ADVERTISEMENT
 using System;
 using GameFrameX.Advertisement.Runtime;
+using GameFrameX.Runtime;
 using WeChatWASM;
 
 namespace GameFrameX.Advertisement.WechatMiniGame.Runtime
