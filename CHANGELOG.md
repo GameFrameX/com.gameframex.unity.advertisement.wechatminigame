@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.1](https://github.com/GameFrameX/com.gameframex.unity.advertisement.wechatminigame/tree/1.0.1) (2025-05-30)
+
+[Full Changelog](https://github.com/GameFrameX/com.gameframex.unity.advertisement.wechatminigame/compare/1.0.0...1.0.1)
+
 ## [1.0.0](https://github.com/GameFrameX/com.gameframex.unity.advertisement.wechatminigame/tree/1.0.0) (2025-05-29)
 
 [Full Changelog](https://github.com/GameFrameX/com.gameframex.unity.advertisement.wechatminigame/compare/b97b0a4bed645072658c9ed3570dcb6f4cdff2fc...1.0.0)
