@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/compare/1.0.2...1.1.0) (2025-12-23)
+
+
+### Features
+
+* **ci:** change ci ([208c0e7](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/commit/208c0e7061d4e118f7325483bcc2067bc1b2e0a3))
+
 # Changelog
 
 ## [1.0.2](https://github.com/GameFrameX/com.gameframex.unity.advertisement.wechatminigame/tree/1.0.2) (2025-06-01)
