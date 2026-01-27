@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/compare/1.1.0...1.2.0) (2026-01-27)
+
+
+### Features
+
+* **微信小游戏广告:** 新增 Play 方法并扩展参数 ([3c41088](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/commit/3c41088cc9bf74d2b010b005ee0d0961434b73f5))
+
 # [1.1.0](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/compare/1.0.2...1.1.0) (2025-12-23)
 
 
