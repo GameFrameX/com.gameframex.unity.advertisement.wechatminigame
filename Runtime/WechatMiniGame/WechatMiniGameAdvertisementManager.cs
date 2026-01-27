@@ -1,4 +1,5 @@
 #if UNITY_WEBGL && ENABLE_WECHAT_MINI_GAME && ENABLE_WECHAT_MINI_GAME_ADVERTISEMENT
+
 using System;
 using GameFrameX.Advertisement.Runtime;
 using GameFrameX.Runtime;
@@ -11,7 +12,7 @@ namespace GameFrameX.Advertisement.WechatMiniGame.Runtime
         private static WXRewardedVideoAd _wxRewardVideoAd;
 
 
-        public override void Initialize(string adUnitId)
+        public override void Initialize(string adUnitId, bool debug = false)
         {
             WXBase.InitSDK((code) => { });
             _wxRewardVideoAd = WXBase.CreateRewardedVideoAd(new WXCreateRewardedVideoAdParam()
@@ -52,7 +53,7 @@ namespace GameFrameX.Advertisement.WechatMiniGame.Runtime
             UnityEngine.Debug.Log("WxRewardVideoAd.OnClose:" + Utility.Json.ToJson(response));
         }
 
-        public override void Show(Action<string> success, Action<string> fail, Action<bool> onShowResult)
+        public override void Show(Action<string> success, Action<string> fail, Action<bool> onShowResult, string customData = null)
         {
             OnShowResult = onShowResult;
             _wxRewardVideoAd.Show(
@@ -68,12 +69,38 @@ namespace GameFrameX.Advertisement.WechatMiniGame.Runtime
                 });
         }
 
-        public override void Load(Action<string> success, Action<string> fail)
+        public override void Load(Action<string> success, Action<string> fail, string customData = null)
         {
             OnLoadSuccess = success;
             OnLoadFail = fail;
             _wxRewardVideoAd.Load(OnWxADLoadSuccess, OnWxAdLoadFail);
         }
+
+        public override void Play(Action<bool> playResult, string customData = null)
+        {
+            void AdLoadSuccess(string success)
+            {
+                void ShowSuccess(string showSuccess)
+                {
+                    Log.Debug("ShowSuccess:" + showSuccess);
+                }
+
+                void ShowFail(string fail)
+                {
+                    Log.Debug("ShowFail:" + fail);
+                }
+
+                Show(ShowSuccess, ShowFail, playResult, customData);
+            }
+
+            void AdLoadFail(string fail)
+            {
+                playResult?.Invoke(false);
+            }
+
+            Load(AdLoadSuccess, AdLoadFail, customData);
+        }
     }
 }
+
 #endif
