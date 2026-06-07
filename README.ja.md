@@ -53,21 +53,34 @@ GameFrameX Advertisement（WeChat ミニゲーム）は、WeChat ミニゲーム
 
 ### インストール
 
-#### 方法1: Unity Package Manager（推奨）
+Unity プロジェクトの `Packages/manifest.json` を編集し、`scopedRegistries` セクションを追加してください：
 
-1. Unity Package Managerを開く
-2. `+`ボタンをクリックし、`Add package from git URL...`を選択
-3. 次のURLを入力：
-   ```
-   https://github.com/GameFrameX/com.gameframex.unity.advertisement.wechatminigame.git
-   ```
+```json
+{
+  "scopedRegistries": [
+    {
+      "name": "GameFrameX",
+      "url": "https://gameframex.upm.alianblank.uk",
+      "scopes": [
+        "com.gameframex"
+      ]
+    }
+  ]
+}
+```
 
-#### 方法2: 手動インストール
+`scopes` は、どのパッケージをこのレジストリから解決するかを制御します。`com.gameframex` で始まるパッケージのみがこのレジストリから取得されます。
 
-1. このリポジトリをダウンロードまたはクローン
-2. パッケージフォルダをUnityプロジェクトの`Packages`ディレクトリにコピー
+Then add the package to `dependencies`:
 
----
+```json
+{
+  "dependencies": {
+    "com.gameframex.unity.advertisement.wechatminigame": "1.2.0"
+  }
+}
+```
+
 
 ## 使用例
 

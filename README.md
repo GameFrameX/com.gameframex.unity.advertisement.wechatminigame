@@ -53,21 +53,34 @@ GameFrameX Advertisement (WeChat Mini Game) is an advertisement component for We
 
 ### Installation
 
-#### Method 1: Unity Package Manager (Recommended)
+Edit your Unity project's `Packages/manifest.json` and add the `scopedRegistries` section:
 
-1. Open Unity Package Manager
-2. Click the `+` button and select `Add package from git URL...`
-3. Enter the following URL:
-   ```
-   https://github.com/GameFrameX/com.gameframex.unity.advertisement.wechatminigame.git
-   ```
+```json
+{
+  "scopedRegistries": [
+    {
+      "name": "GameFrameX",
+      "url": "https://gameframex.upm.alianblank.uk",
+      "scopes": [
+        "com.gameframex"
+      ]
+    }
+  ]
+}
+```
 
-#### Method 2: Manual Installation
+`scopes` controls which packages are resolved through this registry. Only packages whose names start with `com.gameframex` will be fetched from it.
 
-1. Download or clone this repository
-2. Copy the package folder to your Unity project's `Packages` directory
+Then add the package to `dependencies`:
 
----
+```json
+{
+  "dependencies": {
+    "com.gameframex.unity.advertisement.wechatminigame": "1.2.0"
+  }
+}
+```
+
 
 ## Usage Examples
 
