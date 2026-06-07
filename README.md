@@ -21,7 +21,7 @@ All-in-One Solution for Indie Game Development · Empowering Indie Developers' D
 
 </div>
 
-## 📑 Table of Contents
+## Table of Contents
 
 - [Project Overview](#project-overview)
 - [Quick Start](#quick-start)
@@ -38,10 +38,10 @@ GameFrameX Advertisement (WeChat Mini Game) is an advertisement component for We
 
 ### Key Features
 
-- 🎯 **WeChat Mini Game Ads** - Native ad SDK integration for WeChat Mini Game
-- 🔧 **Component-Based Design** - Built on GameFrameX modular architecture
-- 📊 **Multiple Ad Types** - Support for banner, interstitial, and rewarded video ads
-- 🛠️ **Easy Configuration** - Simple setup with code cropping support
+- **WeChat Mini Game Ads** - Native ad SDK integration for WeChat Mini Game
+- **Component-Based Design** - Built on GameFrameX modular architecture
+- **Multiple Ad Types** - Support for banner, interstitial, and rewarded video ads
+- **Easy Configuration** - Simple setup with code cropping support
 
 ### System Requirements
 
@@ -101,15 +101,15 @@ Runtime/
 
 ## Documentation & Resources
 
-- 📖 **Documentation**: [https://gameframex.doc.alianblank.com](https://gameframex.doc.alianblank.com)
-- 🐛 **Issue Tracker**: [GitHub Issues](https://github.com/GameFrameX/com.gameframex.unity.advertisement.wechatminigame/issues)
+- **Documentation**: [https://gameframex.doc.alianblank.com](https://gameframex.doc.alianblank.com)
+- **Issue Tracker**: [GitHub Issues](https://github.com/GameFrameX/com.gameframex.unity.advertisement.wechatminigame/issues)
 
 ---
 
 ## Community & Support
 
-- 💬 **QQ Group**: [467608841](https://qm.qq.com/cgi-bin/qm/qr?k=sYFd1nv6m2KZIWFLorZ5pBR0AE5ZhbuL&jump_from=webapi&authKey=oCu+uoL3n35fT5SEt7iLgGtROPxh31n/rHUxRlp0w1f+j38W4tKBuWyRH3KEdwHN)
-- 💡 **Feature Requests**: [GitHub Discussions](https://github.com/GameFrameX/com.gameframex.unity.advertisement.wechatminigame/discussions)
+- **QQ Group**: [467608841](https://qm.qq.com/cgi-bin/qm/qr?k=sYFd1nv6m2KZIWFLorZ5pBR0AE5ZhbuL&jump_from=webapi&authKey=oCu+uoL3n35fT5SEt7iLgGtROPxh31n/rHUxRlp0w1f+j38W4tKBuWyRH3KEdwHN)
+- **Feature Requests**: [GitHub Discussions](https://github.com/GameFrameX/com.gameframex.unity.advertisement.wechatminigame/discussions)
 
 ---
 

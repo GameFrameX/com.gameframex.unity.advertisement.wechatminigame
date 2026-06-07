@@ -21,7 +21,7 @@
 
 </div>
 
-## 📑 目次
+## 目次
 
 - [プロジェクト概要](#プロジェクト概要)
 - [クイックスタート](#クイックスタート)
@@ -38,10 +38,10 @@ GameFrameX Advertisement（WeChat ミニゲーム）は、WeChat ミニゲーム
 
 ### 主な機能
 
-- 🎯 **WeChat ミニゲーム広告** - WeChat ミニゲームネイティブ広告 SDK 統合
-- 🔧 **コンポーネントベース設計** - GameFrameX モジュラーアーキテクチャ基盤
-- 📊 **複数広告タイプ** - バナー、インタースティシャル、リワード動画広告をサポート
-- 🛠️ **簡単設定** - コードクロッピング対応のシンプルセットアップ
+- **WeChat ミニゲーム広告** - WeChat ミニゲームネイティブ広告 SDK 統合
+- **コンポーネントベース設計** - GameFrameX モジュラーアーキテクチャ基盤
+- **複数広告タイプ** - バナー、インタースティシャル、リワード動画広告をサポート
+- **簡単設定** - コードクロッピング対応のシンプルセットアップ
 
 ### システム要件
 
@@ -101,15 +101,15 @@ Runtime/
 
 ## ドキュメントとリソース
 
-- 📖 **ドキュメント**: [https://gameframex.doc.alianblank.com](https://gameframex.doc.alianblank.com)
-- 🐛 **イシュートラッカー**: [GitHub Issues](https://github.com/GameFrameX/com.gameframex.unity.advertisement.wechatminigame/issues)
+- **ドキュメント**: [https://gameframex.doc.alianblank.com](https://gameframex.doc.alianblank.com)
+- **イシュートラッカー**: [GitHub Issues](https://github.com/GameFrameX/com.gameframex.unity.advertisement.wechatminigame/issues)
 
 ---
 
 ## コミュニティとサポート
 
-- 💬 **QQグループ**: [467608841](https://qm.qq.com/cgi-bin/qm/qr?k=sYFd1nv6m2KZIWFLorZ5pBR0AE5ZhbuL&jump_from=webapi&authKey=oCu+uoL3n35fT5SEt7iLgGtROPxh31n/rHUxRlp0w1f+j38W4tKBuWyRH3KEdwHN)
-- 💡 **機能リクエスト**: [GitHub Discussions](https://github.com/GameFrameX/com.gameframex.unity.advertisement.wechatminigame/discussions)
+- **QQグループ**: [467608841](https://qm.qq.com/cgi-bin/qm/qr?k=sYFd1nv6m2KZIWFLorZ5pBR0AE5ZhbuL&jump_from=webapi&authKey=oCu+uoL3n35fT5SEt7iLgGtROPxh31n/rHUxRlp0w1f+j38W4tKBuWyRH3KEdwHN)
+- **機能リクエスト**: [GitHub Discussions](https://github.com/GameFrameX/com.gameframex.unity.advertisement.wechatminigame/discussions)
 
 ---
 
