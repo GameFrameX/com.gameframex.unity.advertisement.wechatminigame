@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/compare/1.2.0...1.2.1) (2026-06-08)
+
+
+### Bug Fixes
+
+* 补全包规范文件（LICENSE/CHANGELOG/URL 字段/unity 字段） ([1342444](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/commit/1342444995241357e6d7394399a32f4800ed9295))
+
 # [1.2.0](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/compare/1.1.0...1.2.0) (2026-01-27)
 
 
