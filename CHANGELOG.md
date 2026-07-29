@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/compare/1.2.1...1.3.0) (2026-07-29)
+
+
+### Features
+
+* 添加依赖项以支持 Unity 组件 ([a55255a](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/commit/a55255a620a23d14f4f4d2fc58ac96e80b986b15))
+
 ## [1.2.1](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/compare/1.2.0...1.2.1) (2026-06-08)
 
 
