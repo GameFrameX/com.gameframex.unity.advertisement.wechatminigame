@@ -34,7 +34,7 @@
 
 ## プロジェクト概要
 
-GameFrameX Advertisement（WeChat ミニゲーム）は、WeChat ミニゲームプラットフォーム向けの広告コンポーネントで、WeChat ミニゲームエコシステムをターゲットとした Unity ゲームに広告統合機能を提供します。
+GameFrameX Advertisement（WeChat ミニゲーム）は、WeChat ミニゲームプラットフォーム向けの広告コンポーネントで、WeChat ミニゲームエコシステムをターゲットとした Unity ゲームに広告統合機能を提供します。本パッケージは `WechatMiniGameAdvertisementBootstrap` によって `BeforeSceneLoad` ステージでメインパッケージの `AdvertisementRegistry` に自己登録します（`UNITY_WEBGL && ENABLE_WECHAT_MINI_GAME && ENABLE_WECHAT_MINI_GAME_ADVERTISEMENT` マクロが有効でない場合コードはストリップされ、登録は行われません。参照することが登録です）。初期化はファクトリクロージャー経由で強く型付けされた設定を注入します。
 
 ### 主な機能
 
@@ -83,6 +83,26 @@ GameFrameX Advertisement（WeChat ミニゲーム）は、WeChat ミニゲーム
    ```
 3. Unity の **Package Manager** で **Git URL** を使用して追加：`https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame.git`
 4. リポジトリを Unity プロジェクトの `Packages` ディレクトリにクローンしてください。自動的に読み込まれます。
+
+### チャネル登録と設定
+
+起動時（初回の広告呼び出し前）に `WechatMiniGameAdvertisementBootstrap.Config` を設定してください：
+
+```csharp
+using GameFrameX.Advertisement.Runtime;
+
+// 起動時（初回の広告呼び出し前）にチャネル設定を注入
+WechatMiniGameAdvertisementBootstrap.Config = new WechatMiniGameAdvertisementConfig
+{
+    adUnitId = "広告ユニットID",
+    isDebug = false,
+};
+
+// その後は通常どおり AdvertisementComponent を使用。または明示的にルーティング
+var manager = AdvertisementRegistry.ResolveManager("wechatminigame");
+```
+
+チャネルの `ChannelId` 定数は `"wechatminigame"` で、`AdvertisementRegistry.ResolveManager("wechatminigame")` で本チャネルへ明示的にルーティングできます。
 ## 使用例
 
 ### プロジェクト構造
@@ -98,6 +118,13 @@ Runtime/
 
 - **`WechatMiniGameAdvertisementManager`**: WeChat ミニゲーム広告 SDK の `IAdvertisementManager` インターフェースを実装。
 - **`GameFrameXAdvertisementWechatMiniGameCroppingHelper`**: ビルド最適化のためのコードクロッピングヘルパー。
+- **`WechatMiniGameAdvertisementConfig`**: `adUnitId`（広告ユニットID）フィールドを持つ強く型付けされたチャネル設定。`WechatMiniGameAdvertisementBootstrap.Config` 経由で注入。
+- **`WechatMiniGameAdvertisementBootstrap`**: チャネルの起動時登録。`BeforeSceneLoad` ステージでメインパッケージの `AdvertisementRegistry` に自己登録し、起動時の `Config` 静的プロパティを持ちます。
+
+### 破壊的変更（v2.1）
+
+- **マクロ選択の広告ユニットIDフィールドの削除**：`AdvertisementComponent` の「WebGL WeChat 広告ユニットID」シリアライズフィールドは削除され、`adUnitId` は `WechatMiniGameAdvertisementBootstrap.Config` 経由で注入されます；
+- **メインパッケージの Inspector タイプドロップダウンの削除**：チャネル発見はメインパッケージの `AdvertisementRegistry` に統一されました。
 
 ---
 

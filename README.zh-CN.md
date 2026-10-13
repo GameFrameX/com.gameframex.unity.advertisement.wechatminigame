@@ -34,7 +34,7 @@
 
 ## 项目简介
 
-GameFrameX Advertisement（微信小游戏）是针对微信小游戏平台的广告组件，为面向微信小游戏生态的 Unity 游戏提供广告集成功能。
+GameFrameX Advertisement（微信小游戏）是针对微信小游戏平台的广告组件，为面向微信小游戏生态的 Unity 游戏提供广告集成功能。本包通过 `WechatMiniGameAdvertisementBootstrap` 在 `BeforeSceneLoad` 阶段自注册进主包 `AdvertisementRegistry`（宏 `UNITY_WEBGL && ENABLE_WECHAT_MINI_GAME && ENABLE_WECHAT_MINI_GAME_ADVERTISEMENT` 未启用时代码被裁剪，注册不会发生；引用即注册）；初始化由工厂闭包注入强类型配置。
 
 ### 核心特性
 
@@ -83,6 +83,26 @@ GameFrameX Advertisement（微信小游戏）是针对微信小游戏平台的�
    ```
 3. 在 Unity 的 `Package Manager` 中使用 `Git URL` 的方式添加库，地址为：`https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame.git`
 4. 直接下载仓库放置到 Unity 项目的 `Packages` 目录下，会自动加载识别。
+
+### 渠道注册与配置
+
+在启动期（首次广告调用前）对 `WechatMiniGameAdvertisementBootstrap.Config` 赋值：
+
+```csharp
+using GameFrameX.Advertisement.Runtime;
+
+// 启动期（首次广告调用前）注入渠道配置
+WechatMiniGameAdvertisementBootstrap.Config = new WechatMiniGameAdvertisementConfig
+{
+    adUnitId = "你的广告位ID",
+    isDebug = false,
+};
+
+// 之后照常使用 AdvertisementComponent；或显式路由到本渠道
+var manager = AdvertisementRegistry.ResolveManager("wechatminigame");
+```
+
+渠道 `ChannelId` 常量值为 `"wechatminigame"`，可通过 `AdvertisementRegistry.ResolveManager("wechatminigame")` 显式路由到本渠道。
 ## 使用示例
 
 ### 项目结构
@@ -98,6 +118,13 @@ Runtime/
 
 - **`WechatMiniGameAdvertisementManager`**: 实现了微信小游戏广告 SDK 的 `IAdvertisementManager` 接口。
 - **`GameFrameXAdvertisementWechatMiniGameCroppingHelper`**: 用于构建优化的代码裁剪辅助类。
+- **`WechatMiniGameAdvertisementConfig`**: 渠道强类型配置，含 `adUnitId`（广告位ID）字段，经 `WechatMiniGameAdvertisementBootstrap.Config` 注入。
+- **`WechatMiniGameAdvertisementBootstrap`**: 渠道启动注册，`BeforeSceneLoad` 阶段自注册进主包 `AdvertisementRegistry`，含启动期 `Config` 静态属性。
+
+### 破坏性变更（v2.1）
+
+- **宏选广告位ID字段已移除**：`AdvertisementComponent` 上的「WebGL 微信 广告位ID」序列化字段已删除，`adUnitId` 改经 `WechatMiniGameAdvertisementBootstrap.Config` 注入；
+- **主包 Inspector 类型下拉已移除**：渠道发现统一收敛到主包 `AdvertisementRegistry`。
 
 ---
 

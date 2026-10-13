@@ -34,7 +34,7 @@ All-in-One Solution for Indie Game Development · Empowering Indie Developers' D
 
 ## Project Overview
 
-GameFrameX Advertisement (WeChat Mini Game) is an advertisement component for WeChat Mini Game platform, providing ad integration for Unity games targeting the WeChat Mini Game ecosystem.
+GameFrameX Advertisement (WeChat Mini Game) is an advertisement component for WeChat Mini Game platform, providing ad integration for Unity games targeting the WeChat Mini Game ecosystem. This package self-registers into the main package's `AdvertisementRegistry` via `WechatMiniGameAdvertisementBootstrap` at the `BeforeSceneLoad` stage (when the macros `UNITY_WEBGL && ENABLE_WECHAT_MINI_GAME && ENABLE_WECHAT_MINI_GAME_ADVERTISEMENT` are not enabled the code is stripped and registration does not happen; referencing the package is registering); initialization is injected with a strongly-typed config through the factory closure.
 
 ### Key Features
 
@@ -83,6 +83,26 @@ Choose one of the following methods:
    ```
 3. Use **Package Manager** in Unity with **Git URL**: `https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame.git`
 4. Clone the repository into your Unity project's `Packages` directory. It will be loaded automatically.
+
+### Channel Registration & Configuration
+
+Assign `WechatMiniGameAdvertisementBootstrap.Config` at startup (before the first ad call):
+
+```csharp
+using GameFrameX.Advertisement.Runtime;
+
+// Inject the channel config at startup (before the first ad call)
+WechatMiniGameAdvertisementBootstrap.Config = new WechatMiniGameAdvertisementConfig
+{
+    adUnitId = "your ad unit id",
+    isDebug = false,
+};
+
+// Then use AdvertisementComponent as usual; or explicitly route to this channel
+var manager = AdvertisementRegistry.ResolveManager("wechatminigame");
+```
+
+The channel `ChannelId` constant is `"wechatminigame"`; `AdvertisementRegistry.ResolveManager("wechatminigame")` routes explicitly to this channel.
 ## Usage Examples
 
 ### Project Structure
@@ -98,6 +118,13 @@ Runtime/
 
 - **`WechatMiniGameAdvertisementManager`**: Implements `IAdvertisementManager` for the WeChat Mini Game ad SDK.
 - **`GameFrameXAdvertisementWechatMiniGameCroppingHelper`**: Code cropping helper for build optimization.
+- **`WechatMiniGameAdvertisementConfig`**: Strongly-typed channel config with the `adUnitId` field, injected via `WechatMiniGameAdvertisementBootstrap.Config`.
+- **`WechatMiniGameAdvertisementBootstrap`**: Channel startup registration; self-registers into the main package's `AdvertisementRegistry` at `BeforeSceneLoad`, with a startup-time `Config` static property.
+
+### Breaking Changes (v2.1)
+
+- **Macro-selected ad unit ID fields removed**: the serialized "WebGL WeChat ad unit ID" field on `AdvertisementComponent` has been removed; `adUnitId` is now injected via `WechatMiniGameAdvertisementBootstrap.Config`;
+- **Main package Inspector type dropdown removed**: channel discovery is now unified through the main package's `AdvertisementRegistry`.
 
 ---
 
