@@ -7,10 +7,40 @@ using WeChatWASM;
 
 namespace GameFrameX.Advertisement.WechatMiniGame.Runtime
 {
+    /// <summary>
+    /// 微信小游戏激励视频广告管理器。
+    /// </summary>
+    /// <remarks>
+    /// 渠道身份常量 <see cref="ChannelId"/> 供注册表互斥解析与显式路由使用；初始化统一走
+    /// <see cref="Initialize(AdvertisementConfig)"/> 的强类型 <see cref="WechatMiniGameAdvertisementConfig"/>
+    /// （由 WechatMiniGameAdvertisementBootstrap 工厂闭包注入，adUnitId 自组件宏选字段下沉而来）。
+    /// </remarks>
     public class WechatMiniGameAdvertisementManager : BaseAdvertisementManager
     {
+        /// <summary>
+        /// 微信小游戏渠道唯一标识。
+        /// </summary>
+        public const string ChannelId = "wechatminigame";
+
         private static WXRewardedVideoAd _wxRewardVideoAd;
 
+        /// <summary>
+        /// 使用强类型配置初始化微信小游戏广告管理器。
+        /// </summary>
+        /// <param name="config">微信小游戏渠道配置</param>
+        public override void Initialize(AdvertisementConfig config)
+        {
+            var wechatConfig = config as WechatMiniGameAdvertisementConfig;
+            if (wechatConfig == null)
+            {
+                throw new ArgumentException("Config must be WechatMiniGameAdvertisementConfig", nameof(config));
+            }
+
+            GameFrameworkGuard.NotNullOrEmpty(wechatConfig.adUnitId, nameof(wechatConfig.adUnitId));
+#pragma warning disable CS0618
+            Initialize(wechatConfig.adUnitId, wechatConfig.isDebug);
+#pragma warning restore CS0618
+        }
 
         public override void Initialize(string adUnitId, bool debug = false)
         {

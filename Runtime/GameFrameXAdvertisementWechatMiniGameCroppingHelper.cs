@@ -11,6 +11,8 @@ namespace GameFrameX.Advertisement.WechatMiniGame.Runtime
         {
 #if UNITY_WEBGL && ENABLE_WECHAT_MINI_GAME && ENABLE_WECHAT_MINI_GAME_ADVERTISEMENT
             _ = typeof(WechatMiniGameAdvertisementManager);
+            _ = typeof(WechatMiniGameAdvertisementConfig);
+            _ = typeof(WechatMiniGameAdvertisementBootstrap);
 #endif
         }
     }
