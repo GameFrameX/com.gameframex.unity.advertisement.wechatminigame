@@ -31,7 +31,6 @@
 
 using System;
 using GameFrameX.Advertisement.Runtime;
-using UnityEngine.Scripting;
 
 namespace GameFrameX.Advertisement.WechatMiniGame.Runtime
 {
@@ -42,14 +41,14 @@ namespace GameFrameX.Advertisement.WechatMiniGame.Runtime
     /// 广告位ID 由 <c>AdvertisementComponent</c> 的宏选序列化字段下沉而来，
     /// 经 <see cref="WechatMiniGameAdvertisementBootstrap"/> 的工厂闭包注入渠道管理器。
     /// </remarks>
-    [Preserve]
+    [UnityEngine.Scripting.Preserve]
     [Serializable]
     public class WechatMiniGameAdvertisementConfig : AdvertisementConfig
     {
         /// <summary>
         /// 广告位ID。
         /// </summary>
-        [Preserve]
+        [UnityEngine.Scripting.Preserve]
         public string adUnitId;
     }
 }
