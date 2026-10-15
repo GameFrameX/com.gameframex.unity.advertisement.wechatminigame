@@ -3,7 +3,7 @@
   "displayName": "Game Frame X Advertisement (WeChat Mini Game)",
   "category": "Game Frame X",
   "description": "GameFrameX Advertisement WeChat Mini Game — WeChat Mini Game ad adapter for GameFrameX Advertisement, integrating the native WeChat Mini Game ad SDK for banner, interstitial and rewarded video ads. WechatMiniGameAdvertisementManager implements BaseAdvertisementManager for load, show and lifecycle handling; WechatMiniGameAdvertisementBootstrap self-registers the channel into AdvertisementRegistry at BeforeSceneLoad and injects a strongly typed config through the factory closure. Code is compiled only when UNITY_WEBGL with ENABLE_WECHAT_MINI_GAME and ENABLE_WECHAT_MINI_GAME_ADVERTISEMENT macros is enabled, with IL2CPP cropping protection. Docs: https://gameframex.doc.alianblank.com\n\nGameFrameX Advertisement WeChat Mini Game — GameFrameX Advertisement 的微信小游戏广告渠道包，集成微信小游戏原生广告 SDK，支持横幅、插屏与激励视频广告。WechatMiniGameAdvertisementManager 实现 BaseAdvertisementManager，负责加载、展示与生命周期管理；WechatMiniGameAdvertisementBootstrap 在 BeforeSceneLoad 阶段自注册进 AdvertisementRegistry，初始化由工厂闭包注入强类型配置。仅当 UNITY_WEBGL 且启用 ENABLE_WECHAT_MINI_GAME 与 ENABLE_WECHAT_MINI_GAME_ADVERTISEMENT 宏时参与编译，并带 IL2CPP 裁剪保护。文档：https://gameframex.doc.alianblank.com",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "unity": "2019.4",
   "keywords": [
     "Game Frame X"

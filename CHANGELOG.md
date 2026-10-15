@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/compare/1.3.0...2.0.0) (2026-10-15)
+
+
+### Features
+
+* **advertisement.wechatminigame:** 适配 GameFrameX 3.0.0 ([8b09877](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/commit/8b09877a186deb42585033bbe58b75de36fbb09a))
+* **advertisement:** 新增微信小游戏渠道自注册与强类型配置 ([c02ad21](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/commit/c02ad2105576cf03f8437975e0cd1b2286ac77ed))
+
+
+### BREAKING CHANGES
+
+* **advertisement:** 广告位 ID 改由 WechatMiniGameAdvertisementBootstrap.Config 注入；AdvertisementComponent 的「WebGL 微信 广告位ID」序列化字段已移除。
+
 # [1.3.0](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/compare/1.2.1...1.3.0) (2026-07-29)
 
 
