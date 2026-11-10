@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/compare/2.0.0...2.0.1) (2026-11-10)
+
+
+### Bug Fixes
+
+* **advertisement.wechatminigame:** 添加完整 link.xml 防代码裁剪保护 ([ef8c184](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/commit/ef8c184d412061e0e79a901d90040cb35c0a642f))
+
 # [2.0.0](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/compare/1.3.0...2.0.0) (2026-10-15)
 
 
