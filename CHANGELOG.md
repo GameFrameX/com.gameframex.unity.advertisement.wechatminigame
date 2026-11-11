@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/compare/2.0.1...2.0.2) (2026-11-11)
+
+
+### Bug Fixes
+
+* **advertisement.wechatminigame:** 补齐 Play(AdvertisementPlayOption) 实现 ([04bfd7a](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/commit/04bfd7a4d50772b478bcbb65d5635ce3f31a070b))
+
 ## [2.0.1](https://github.com/gameframex/com.gameframex.unity.advertisement.wechatminigame/compare/2.0.0...2.0.1) (2026-11-10)
 
 
