@@ -105,6 +105,28 @@ namespace GameFrameX.Advertisement.WechatMiniGame.Runtime
             OnLoadFail = fail;
             _wxRewardVideoAd.Load(OnWxADLoadSuccess, OnWxAdLoadFail);
         }
+        /// <summary>
+        /// 使用播放选项播放微信小游戏激励视频广告。
+        /// </summary>
+        /// <remarks>
+        /// 与 CSJ 渠道一致：先 Load，成功后 Show 并透传 option 回调；加载失败时回调 OnFail 与 OnShowResult(false)。
+        /// 完整观看信号来自微信 onClose 的 isEnded（OnShowResult）；OnSuccess 仅表示广告成功拉起。
+        /// </remarks>
+        /// <param name="option">广告播放选项</param>
+        public override void Play(AdvertisementPlayOption option)
+        {
+#pragma warning disable CS0618
+            Load((success) =>
+            {
+                Show(option.OnSuccess, option.OnFail, option.OnShowResult, option.customData);
+            }, (fail) =>
+            {
+                UnityEngine.Debug.Log("[WechatMiniGame] Play Load Fail: " + fail);
+                option.OnFail?.Invoke(fail);
+                option.OnShowResult?.Invoke(false);
+            }, option.extraData);
+#pragma warning restore CS0618
+        }
 
         public override void Play(Action<bool> playResult, string customData = null)
         {
